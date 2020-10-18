@@ -9,7 +9,7 @@ const recursEngine = io => async (vId, vData, vIndex) => {
         await recursEngine(io)(vId, vData, 0);
         return;
     }
-    // console.log('recursengin log:',  vData[vIndex]['$'], vIndex, vData.length)
+    console.log('recursengin log:',  vData[vIndex]['$'], vIndex)
     trackingData = Object.assign(trackingData, {
         [vId]: {
             position: vData[vIndex]['$'],

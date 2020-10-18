@@ -24,4 +24,4 @@ router.get(`/tasks/:vehicleId`, ctx => {
 fakeTracking.startEngine(io);
 app.use(cors());
 app.use(router.routes()).use(router.allowedMethods());
-server.listen(3000);
+server.listen(4000);
