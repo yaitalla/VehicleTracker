@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.main`
+    display: flex;
     width: 100%;
-    height: auto;
-    background: #FCFCFC;
+    height: 100%;
+    background: silver;
 `;
 export const Figure = styled.figure`
     display: flex;
@@ -12,7 +13,7 @@ export const Figure = styled.figure`
     justify-content: center;
 `;
 export const Caption = styled.figcaption`
-    font-family: Barcode;
+    font-family: Pixel;
 `;
 export const Img = styled.img`
     width: 200px;
@@ -47,6 +48,7 @@ export const H3 = styled.h5`
 `;
 export const Section = styled.section`
     display: flex;
-    height: auto;
+    height: 100%;
+    width: 80%;
     border: 1px solid black;
 `;

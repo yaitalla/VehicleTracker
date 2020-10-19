@@ -6,9 +6,9 @@ const SocketProvider = (props) => {
     const [value, setValue] = useState({});
     useEffect(() => initSockets( {setValue} ), [setValue]);
     return (
-        <SocketContext value={value} >
+        <SocketContext.Provider value={value} >
             { props.children }
-        </SocketContext>
+        </SocketContext.Provider>
     )
 }
 
