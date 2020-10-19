@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import SocketProvider from '../../sockets';
+import TrackMap from '../../components/TrackMap';
 import { Wrap, Header, Section, TitleWrap,
      H1, H2, H3, Figure, Img, Caption
 } from './style';
 
+
+
 const MainPage = () => {
+    const [started, setStarted] = useState(false)
+    
+    useEffect(() => {
+        // if (!started) {
+        //     setStarted(true)
+        //     initMap()
+        //     setStarted(true)
+        // }
+    }, [])
     return (
         <Wrap>
             <Header>
@@ -16,9 +28,9 @@ const MainPage = () => {
             </Header>
             <Section>
                 <SocketProvider>
-                <p>Salut</p>
+                    <TrackMap />
                 </SocketProvider>
-                
+               <div id="map" ></div>
             </Section>
         </Wrap>
     )

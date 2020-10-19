@@ -8,7 +8,6 @@ export const Container = styled.main`
 `;
 export const Figure = styled.figure`
     display: flex;
-    border: 1px solid cyan;
     align-items: center;
     justify-content: center;
 `;
@@ -34,10 +33,8 @@ export const TitleWrap = styled.hgroup`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    border: 1px solid red;
 `;
 export const H1 = styled.h1`
-    border: 1px solid red;
     text-align: center;
     font-family: Barcode;
     font-size: 2.3em;

@@ -9,9 +9,9 @@ export const dataParser = (vehiclesData) =>
 
  const socketEvents = ( setValue) => {
     socket.on('updateLocation', (value) => {
-        const loc = dataParser(value)
+        const locations = dataParser(value)
         setValue((state) => {
-            return {...state, loc}
+            return {...state, locations}
         })
   });
 };

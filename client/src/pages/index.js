@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import { Container } from '../containers/Main/style';
 import MainPage from '../containers/Main';
 
+
 export default function Home() {
+  useEffect(() => {
+  }, [])
   return (
     <Container>
       <Head>
