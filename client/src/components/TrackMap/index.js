@@ -1,6 +1,6 @@
-import React, { useContext, useState, useCallback } from 'react';
+import React, { useContext, useState, useCallback, memo } from 'react';
 import SocketContext from '../../sockets/context';
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import { Wrap, containerStyle, center } from './style';
 
 
@@ -8,13 +8,22 @@ import { Wrap, containerStyle, center } from './style';
 const TrackMap = () => {
     const { locations } = useContext(SocketContext)
     const [map, setMap] = useState(null)
+    const loadMarker = marker => {
+        console.log('marker: ', marker)
+    }
     const onLoad = useCallback((map) => {
         const bounds = new globalThis.google.maps.LatLngBounds();
-        map.fitBounds(bounds);
+        map.setCenter(new globalThis.google.maps.LatLng(center.lat, center.lng));
+        map.setZoom(12)
+        console.log('map loaded successfully', map)
     }, [])
-    const onUnmount = useCallback((map) => {
+    const onUnmount = useCallback(() => {
         setMap(null)
+        console.log('map unmounted')
     }, [])
+    const reset = () => {
+
+    }
     return (
        <Wrap>
         
@@ -22,22 +31,25 @@ const TrackMap = () => {
         
             <GoogleMap
                 mapContainerStyle={containerStyle}
-                center={center}
-                zoom={10}
                 onLoad={onLoad}
                 onUnmount={onUnmount}
             >
+                <Marker onLoad={loadMarker}
+                        position={center}
+                />
             </GoogleMap>
         </LoadScript>
 
+
+        {/* <button onClick={reset} >Reset</button> */}
         {
             locations ? 
             locations.map((driver, i) => {
-                return(<p key={i} >{driver[0]}</p>)
+                return(<p key={i} >{driver}</p>)
             }) : null
         }
 
        </Wrap>
     )
 }
-export default TrackMap;
+export default memo(TrackMap);

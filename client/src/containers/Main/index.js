@@ -30,7 +30,6 @@ const MainPage = () => {
                 <SocketProvider>
                     <TrackMap />
                 </SocketProvider>
-               <div id="map" ></div>
             </Section>
         </Wrap>
     )
