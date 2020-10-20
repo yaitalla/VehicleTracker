@@ -2,6 +2,7 @@ import React, { useContext, useState, useCallback, memo } from 'react';
 import SocketContext from '../../sockets/context';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import { Wrap, containerStyle, center } from './style';
+import Markers from '../Markers';
 
 
 
@@ -12,7 +13,6 @@ const TrackMap = () => {
         console.log('marker: ', marker)
     }
     const onLoad = useCallback((map) => {
-        const bounds = new globalThis.google.maps.LatLngBounds();
         map.setCenter(new globalThis.google.maps.LatLng(center.lat, center.lng));
         map.setZoom(12)
         console.log('map loaded successfully', map)
@@ -34,9 +34,7 @@ const TrackMap = () => {
                 onLoad={onLoad}
                 onUnmount={onUnmount}
             >
-                <Marker onLoad={loadMarker}
-                        position={center}
-                />
+                <Markers/>
             </GoogleMap>
         </LoadScript>
 
