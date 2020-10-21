@@ -1,5 +1,5 @@
 {
-  "vehicle1": [
+  "vehicle01": [
     {
       "id": "fakeId1",
       "vehicleId": "vehicle1",
@@ -29,7 +29,7 @@
       "deletedAt": null
     }
   ],
-  "vehicle2": [
+  "vehicle02": [
     {
       "id": "fakeId3",
       "vehicleId": "vehicle2",
@@ -59,7 +59,7 @@
       "deletedAt": null
     }
   ],
-    "vehicle3": [
+    "vehicle03": [
       {
         "id": "fakeId5",
         "vehicleId": "vehicle3",
@@ -88,7 +88,7 @@
         "deletedAt": null
       }
   ],
-  "vehicle4": [
+  "vehicle04": [
     {
       "id": "fakeId7",
       "vehicleId": "vehicle4",
@@ -118,7 +118,7 @@
       "deletedAt": null
     }
   ],
-  "vehicle5": [
+  "vehicle05": [
     {
       "id": "fakeId1",
       "vehicleId": "vehicle5",
