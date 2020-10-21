@@ -106,7 +106,6 @@ export const Section = styled.section`
     align-items: center;
     height: 100%;
     width: 80%;
-    border: 1px solid red;
     border-radius: 5px;
 `;
 

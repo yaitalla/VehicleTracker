@@ -6,7 +6,6 @@ import Markers from '../Markers';
 import TrackList from '../TrackList';
 
 
-
 const TrackMap = ({ setInfo, open }) => {
     const { locations } = useContext(SocketContext)
     const [map, setMap] = useState(null)

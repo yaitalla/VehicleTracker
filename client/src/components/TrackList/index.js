@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import SocketContext from '../../sockets/context';
 import { Wrap, Line, Info } from './style';
+import Modal from '../Modal';
 import axios from 'axios';
 
 const StyledLine = ({data, setInfo, open}) => {
@@ -9,7 +10,6 @@ const StyledLine = ({data, setInfo, open}) => {
         axios.get('http://localhost:4000/tasks/'+id).then((res) => {
             setInfo(res.data.data)
             open(true)
-            console.log(res.data.data)
         });
     }
     return (
@@ -37,6 +37,7 @@ const TrackList = ({ info, openModal }) => {
                 )
             }) : null
         }
+        {/* <Modal /> */}
     </Wrap>
     )
 }

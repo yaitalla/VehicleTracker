@@ -11,7 +11,6 @@ const tasks = require('./gpx/tasks.json');
 
 router.get(`/tasks/:vehicleId`, ctx => {
     const { params: { vehicleId } } = ctx;
-    console.log("id:", vehicleId, tasks[vehicleId])
     if(!VEHICLES_IDS.includes(vehicleId)) {
         ctx.status = 404;
         ctx.body = { error: { code: "vehicule_not_found", status: 404 } };

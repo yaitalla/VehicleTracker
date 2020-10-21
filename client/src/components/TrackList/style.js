@@ -13,6 +13,7 @@ export const Line = styled.div`
     display: flex;
     justify-content: center;
     width: 50%;
+    min-width: 300px;
     margin: 5px;
     flex-direction: column;
     border: 1px solid white;
