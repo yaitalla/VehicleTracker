@@ -6,7 +6,7 @@ import Markers from '../Markers';
 import TrackList from '../TrackList';
 
 
-const TrackMap = ({ setInfo, open }) => {
+const TrackMap = () => {
     const { locations } = useContext(SocketContext)
     const [map, setMap] = useState(null)
     
@@ -32,7 +32,7 @@ const TrackMap = ({ setInfo, open }) => {
                     <Markers/>
                 </GoogleMap>
             </LoadScript>
-            <TrackList info={setInfo} openModal={open} />
+            <TrackList />
        </Wrap>
     )
 }

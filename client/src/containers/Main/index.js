@@ -9,8 +9,6 @@ import { Wrap, Header, Section, BtnWrap, Btn,
 
 const MainPage = () => {
     const [started, setStarted] = useState(false)
-    const [openModal, setOpenModal] = useState(false)
-    const [infoVehicle, setInfoVehicle] = useState([])
     
     return (
         <Wrap>
@@ -29,7 +27,7 @@ const MainPage = () => {
                         </BtnWrap>
                     </Figure>
                     <SocketProvider>
-                        <TrackMap setInfo={setInfoVehicle} open={setOpenModal}/>
+                        <TrackMap/>
                     </SocketProvider>
                 </Section>
                 :

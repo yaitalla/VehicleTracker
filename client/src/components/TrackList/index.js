@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import SocketContext from '../../sockets/context';
 import { Wrap, Line, Info } from './style';
 import Modal from '../Modal';
@@ -21,8 +21,10 @@ const StyledLine = ({data, setInfo, open}) => {
     )
 }
 
-const TrackList = ({ info, openModal }) => {
+const TrackList = () => {
     const { locations } = useContext(SocketContext);
+    const [openModal, setOpenModal] = useState(false)
+    const [infoVehicle, setInfoVehicle] = useState([])
     return (
         <Wrap>
         {
@@ -31,13 +33,15 @@ const TrackList = ({ info, openModal }) => {
                 return(<StyledLine 
                             key={i}
                             data={vehicle}
-                            setInfo={info}
-                            open={openModal} 
+                            setInfo={setInfoVehicle}
+                            open={setOpenModal} 
                         />
                 )
             }) : null
         }
-        {/* <Modal /> */}
+        {
+            openModal ? <Modal close={() => setOpenModal(false)} data={infoVehicle} /> : null
+        }
     </Wrap>
     )
 }
